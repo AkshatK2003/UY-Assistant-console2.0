@@ -12,6 +12,10 @@ The system consists of several key components:
 
 ## Architecture
 
+![High Level Flow Diagram](./high_level_flow_diagram.png)
+
+*Figure 1: The system processes user queries through context retrieval, response generation, entity identification, and URL generation to deliver comprehensive assistance.*
+
 The system consists of these main components:
 - `main.py`: Flask server entry point
 - `LLModel.py`: Core LLM integration
@@ -21,6 +25,20 @@ The system consists of these main components:
   - `productAgent.py`: Generates URLs for product-related operations
   - `productCategoryAgent.py`: Generates URLs for product category operations
   - `storeAgent.py`: Generates URLs for store-related operations
+
+### Component Hierarchy
+
+![Component Hierarchy](./component_hierarchy.png)
+
+*Figure 2: The hierarchical structure of system components shows how the LLModel coordinates between RAG and URL generation agents.*
+
+### Information Flow
+
+For a more detailed view of how information flows through the system:
+
+![Detailed Information Flow](./detailed_information_flow.jpeg)
+
+*Figure 3: Detailed information flow showing the complete request lifecycle, data transfers, and function calls between components.*
 
 ## Installation
 
@@ -80,6 +98,7 @@ curl -X POST http://localhost:5000/generate \
   -H "Content-Type: application/json" \
   -d '{"query": "How do I create a new product?"}'
 ```
+
 4. The response will include both contextual information from the documentation and the appropriate URL (if available).
 
 ## API Reference
@@ -109,6 +128,16 @@ curl -X POST http://localhost:5000/generate \
 ## Requirements
 
 Dependencies are listed in `requirements.txt` and include:
+- flask
+- flask-cors
+- openai
+- langchain
+- langchain-openai
+- langchain-chroma
+- langchain-community
+- python-dotenv
+- mysql-connector-python
+- chromadb
 
 ## Contributing
 
