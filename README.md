@@ -67,7 +67,7 @@ pip install -r requirements.txt
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-5. Create a `config.ini` file with your database connection details:
+5. Create a `config.ini` file with your database connection details in the url_agents folder so to connect the url_agent to the db:
 ```ini
 [Database]
 db_type = mysql
