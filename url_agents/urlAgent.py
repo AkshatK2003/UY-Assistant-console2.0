@@ -29,11 +29,11 @@ auth_plugin= config["Database"]["auth_plugin"]
 
 
 class urlAgent:
-    def __init__(self,baseurl,username=username,password=password,host=host,port=port,database=database,db_type=db_type,auth_plugin=auth_plugin):
+    def __init__(self,baseurl,customerID,username=username,password=password,host=host,port=port,database=database,db_type=db_type,auth_plugin=auth_plugin):
         self.db = SQLDatabase.from_uri(f"mysql+mysqlconnector://{username}:{password}@{host}/{database}?auth_plugin={auth_plugin}")
-        self.productURL=productAgent(baseurl,self.db)
-        self.storeURL=storeAgent(baseurl,self.db)
-        self.productCatURL=productCategoryAgent(baseurl,self.db)
+        self.productURL=productAgent(baseurl,customerID,self.db)
+        self.storeURL=storeAgent(baseurl,customerID,self.db)
+        self.productCatURL=productCategoryAgent(baseurl,customerID,self.db)
 
     def generateURL(self,query):
         prompt = ChatPromptTemplate.from_messages(
