@@ -12,7 +12,7 @@ The system consists of several key components:
 
 ## Architecture
 
-![High Level Flow Diagram](./high_level_flow_diagram.png)
+![High Level Flow Diagram](./high_level_flow_diagram.jpeg)
 
 *Figure 1: The system processes user queries through context retrieval, response generation, entity identification, and URL generation to deliver comprehensive assistance.*
 
@@ -36,7 +36,7 @@ The system consists of these main components:
 
 For a more detailed view of how information flows through the system:
 
-![Detailed Information Flow](./detailed_information_flow.jpeg)
+![Detailed Information Flow](./detailed_information_flow.png)
 
 *Figure 3: Detailed information flow showing the complete request lifecycle, data transfers, and function calls between components.*
 
