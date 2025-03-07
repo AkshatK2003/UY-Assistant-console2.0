@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from LLModel import LLModel
 from flask_cors import CORS
 
-baseurl="http://localhost:3000/console2/"
+baseurl="https://bakingo.resoee.com/console2/"
 class Chatbot:
     def __init__(self,baseurl=baseurl):
         self.bot = LLModel(baseurl)
