@@ -1,0 +1,4 @@
+.env
+config.ini
+check.ipynb
+__pycache__
