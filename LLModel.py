@@ -9,12 +9,12 @@ MODEL="gpt-4o-mini"
 rag=RAG()
 
 class LLModel:
-    def __init__(self,baseurl,model=MODEL,rag=rag,temperature=0):
+    def __init__(self,baseurl,customerID,model=MODEL,rag=rag,temperature=0):
         self.model=MODEL
         self.rag=rag
         self.temperature=temperature
         self.messages=[{},]
-        self.url_agent=urlAgent(baseurl)
+        self.url_agent=urlAgent(baseurl,customerID)
 
     def make_message(self,query,n):
         system_prompt=f"""Use the following pieces of context to answer the user's question. 

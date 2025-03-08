@@ -17,9 +17,9 @@ config.read("config.ini")
 # auth_plugin= config["Database"]["auth_plugin"]
 
 class productCategoryAgent:
-    def __init__(self,baseurl,db):
+    def __init__(self,baseurl,customerID,db):
         self.db = db
-        self.productCat=eval(db.run("select id,productCategoryName from ProductCategory where customerId=52 and isDeleted=0;"))
+        self.customerID=customerID
         self.baseurl=baseurl
         
     def format_data(self,data):
@@ -31,7 +31,7 @@ class productCategoryAgent:
         just print the url
         
         product category (name -> id):
-        {self.format_data(self.productCat)}
+        {self.format_data(eval(self.db.run(f"select id,productCategoryName from ProductCategory where customerId={self.customerID} and isDeleted=0;")))}
 
         ### WARNINGS
         CAREFULLY MAP IDS WITH THE ENTITIES

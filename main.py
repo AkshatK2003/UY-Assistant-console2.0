@@ -3,9 +3,10 @@ from LLModel import LLModel
 from flask_cors import CORS
 
 baseurl="https://bakingo.resoee.com/console2/"
+customerID=52
 class Chatbot:
-    def __init__(self,baseurl=baseurl):
-        self.bot = LLModel(baseurl)
+    def __init__(self,baseurl=baseurl,customerID=customerID):
+        self.bot = LLModel(baseurl,customerID)
 
     def generate(self, query):
         res = self.bot.generate(query)
