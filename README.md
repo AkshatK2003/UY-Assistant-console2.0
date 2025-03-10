@@ -1,4 +1,4 @@
-# ZE Manual AI Assistant
+# UY AI Assistant console2.0
 
 This repository contains a Flask-based AI assistant that helps users navigate and understand the ZE Manual interface by providing contextual responses and generating appropriate URLs.
 
